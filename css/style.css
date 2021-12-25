@@ -279,6 +279,7 @@ h1, h2, h3, h4, h5, h6, figure {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
+  
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -531,8 +532,8 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 .timeline > li > .timeline-badge {
-  background-size: cover;
-  background-position: top center;
+  background-size: 100px;
+  background-position: center;
   background-repeat: no-repeat;
   position: relative;
   color: #fff;
@@ -545,17 +546,18 @@ h1, h2, h3, h4, h5, h6, figure {
   top: 16px;
   left: 50%;
   margin-left: -80px;
-  background-color: #999999;
+  background-color: #f14e95;
   z-index: 100;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
+
 }
 @media screen and (max-width: 480px) {
   .timeline > li > .timeline-badge {
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     margin-left: -20px !important;
   }
 }
