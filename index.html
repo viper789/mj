@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MeghanaJagadeesh</title>
+    <title>Video Background with Audio</title>
     <style>
         /* Fullscreen video background styling */
         body, html {
@@ -21,8 +21,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures the video fills the screen without borders */
-            z-index: -1; /* Behind other content */
+            object-fit: cover;
+            z-index: -1;
         }
 
         /* Optional: Centered content over the video */
@@ -37,15 +37,32 @@
     </style>
 </head>
 <body>
+
     <!-- Video background -->
-    <video class="background-video" autoplay loop playsinline>
+    <video id="backgroundVideo" class="background-video" autoplay loop playsinline>
         <source src="/images/video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
     <!-- Optional content over the video -->
     <div class="content">
-        <h1></h1>
+      
     </div>
+
+    <script>
+        const video = document.getElementById('backgroundVideo');
+
+        // Try to autoplay with audio
+        video.muted = false;
+        video.play().catch(error => {
+            console.log('Autoplay with audio failed:', error);
+
+            // Fallback: Wait for user interaction to start video with audio
+            document.body.addEventListener('click', () => {
+                video.play();
+                headerText.style.display = 'none';
+            }, { once: true }); // Ensures this only triggers once
+        });
+    </script>
 </body>
 </html>
